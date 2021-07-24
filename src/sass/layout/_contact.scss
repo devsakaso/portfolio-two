@@ -1,0 +1,67 @@
+.contact {
+  width: 100%;
+  padding: 12rem 0;
+  background: linear-gradient(
+      rgba($color-quaternary, 0.85),
+      rgba($color-quaternary, 0.85)
+    ),
+    url(../img/contact-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__container {
+    max-width: $container-width;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  & h2 {
+    margin-bottom: 6rem;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-around;
+    &-box {
+      color: $color-white;
+      margin-bottom: 6rem;
+      width: 33.3%;
+      & p {
+        color: $color-grey-light-2;
+      }
+      & i {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  &__form {
+  }
+
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__input,
+  &__textarea {
+    color: $color-white;
+    &:focus {
+      outline: solid $color-primary;
+    }
+  }
+  &__input {
+    padding: 1.5rem 2rem;
+    width: 50%;
+    border: 1px solid $color-grey-light-2;
+    &:first-child {
+      margin-right: 3rem;
+    }
+  }
+
+  &__textarea {
+    margin: 4rem 0;
+    border: 1px solid $color-grey-light-2;
+    width: 100%;
+    min-height: 28rem;
+  }
+}

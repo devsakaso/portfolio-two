@@ -5,6 +5,9 @@
       rgba($color-tertiary, 0.7)
     ),
     url(../img/portfolio-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   &__container {
     max-width: $container-width;
@@ -55,5 +58,4 @@
   & h2 {
     margin-bottom: 6rem;
   }
-
 }

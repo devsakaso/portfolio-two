@@ -1,0 +1,45 @@
+.blog {
+  width: 100%;
+  padding: 12rem 0;
+
+  &__container {
+    max-width: $container-width;
+    margin: 0 auto;
+  }
+  &__posts {
+    display: flex;
+  }
+  &__post {
+    max-width: 36rem;
+    max-height: 52.5rem;
+    border: 1px solid $color-grey-light-2;
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  & h2 {
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  & h3 {
+    margin: 2.8rem 0 1.5rem 2rem;
+  }
+  & small {
+    display: block;
+    margin: 0 0 3.5rem 2rem;
+    & a {
+      color: $color-primary;
+    }
+  }
+  & p {
+    margin: 0 2rem 3rem 2rem;
+    line-height: 2;
+  }
+}
