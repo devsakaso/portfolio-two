@@ -1,0 +1,45 @@
+.services {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 12.3rem 0;
+  text-align: center;
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 35.9rem);
+    grid-template-rows: repeat(2, 31.5rem);
+    row-gap: 6rem;
+    column-gap: 3rem;
+  }
+
+  &__card {
+    width: 35.9rem;
+    height: 31.5rem;
+    background-color: $color-grey-light-3;
+    border: 1px solid $color-grey-light-2;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  }
+
+  & h2 {
+    margin-bottom: 6.2rem;
+  }
+  & i {
+    font-size: $font-size-h3;
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    background-color: $color-black;
+    color: $color-white;
+    margin: 3rem 0;
+  }
+  & h3 {
+    margin-bottom: 3rem;
+  }
+  & p {
+    color: $color-grey-dark-1;
+    line-height: 2;
+    padding: 0 3.4rem;
+  }
+}

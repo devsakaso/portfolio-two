@@ -28,27 +28,59 @@
   }
 
   &-skill {
-    background: linear-gradient(rgba($color-secondary, 0.9),rgba($color-secondary, 0.9) ), url(../img/about-bg.jpg);
+    background: linear-gradient(
+        rgba($color-secondary, 0.9),
+        rgba($color-secondary, 0.9)
+      ),
+      url(../img/about-bg.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     padding: 12.3rem 0;
     &__container {
       max-width: $container-width;
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
     }
-    &__wrapper:not(:last-child) {
-      margin-right: 6rem;
+    &__wrapper {
+      width: 36rem;
+      &:not(:last-child) {
+        margin-right: 3rem;
+        margin-bottom: 0;
+      }
     }
     & h2 {
-      margin-bottom: 4.3rem;
+      margin-bottom: 4.5rem;
+      position: relative;
+      z-index: 1;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+      }
+      &::before {
+        width: 20rem;
+        height: 5px;
+        background: $color-primary;
+        z-index: 100;
+      }
+
+      &::after {
+        width: 33rem;
+        height: 2px;
+        background: $color-white;
+        z-index: 90;
+      }
     }
     & h3:not(:first-child) {
-      margin-top: 3rem;
+      margin-top: 3.5rem;
     }
     & p {
       color: $color-grey-light-2;
+      margin-top: 1.7rem;
     }
   }
 }
