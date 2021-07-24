@@ -27,5 +27,13 @@ html {
 body {
   box-sizing: border-box;
   position: relative;
-  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: $color-white;
+}
+
+.wrapper {
+    max-width: $container-width;
+    margin: 0 auto;
 }

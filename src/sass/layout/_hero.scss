@@ -1,0 +1,18 @@
+.hero {
+  height: 84vh;
+  background: url(../img/header-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  &__container {
+    background: rgba(black, 0.7);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $color-white;
+  }
+
+}

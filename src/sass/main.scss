@@ -9,10 +9,18 @@
 @import "base/utilities";
 
 @import "components/button";
+@import "components/sns";
 
+@import "layout/about";
+@import "layout/blog";
+@import "layout/contact";
 @import "layout/footer";
 @import "layout/header";
+@import "layout/hero";
 @import "layout/navigation";
+@import "layout/portfolio";
+@import "layout/services";
+@import "layout/testimonials";
 
 @import "pages/home";
 
