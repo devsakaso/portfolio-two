@@ -15,4 +15,15 @@
     color: $color-black;
     margin-left: 0;
   }
+  &.small {
+    width: auto;
+    height: auto;
+    border-radius: 1rem;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    border: none;
+    margin: 0 1.5rem 4rem;
+    background-color: $color-black;
+    display: inline;
+  }
 }
