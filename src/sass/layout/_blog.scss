@@ -8,6 +8,11 @@
   }
   &__posts {
     display: flex;
+    justify-content: space-around;
+    @include respond(tab-land) {
+      flex-wrap: wrap;
+      margin: 0 3rem;
+    }
   }
   &__post {
     max-width: 36rem;
@@ -15,6 +20,38 @@
     border: 1px solid $color-grey-light-2;
     &:not(:last-child) {
       margin-right: 3rem;
+      @include respond(tab-land) {
+        margin-right: 0;
+      }
+    }
+
+    @include respond(tab-land) {
+      max-width: 40%;
+
+      &:first-child {
+        max-width: calc(100% - 9rem);
+        display: flex;
+        margin-bottom: 3rem;
+      }
+    }
+    @include respond(tab-port) {
+      max-height: 26.5rem;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      display: flex;
+      margin-bottom: 3rem;
+      // white-space: nowrap;
+      overflow: hidden;
+      &:first-child {
+        max-width: 100%;
+      }
+    }
+    @include respond(phone) {
+      display: block;
+      max-height: 52.5rem;
+      &:first-child {
+      display: block;
+      }
     }
   }
   &__image {
@@ -22,6 +59,14 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    @include respond(tab-port) {
+      max-height: 26.5rem;
+      max-width: 40%;
+    }
+    @include respond(phone) {
+      max-width: 100%;
+
+    }
   }
 
   & h2 {

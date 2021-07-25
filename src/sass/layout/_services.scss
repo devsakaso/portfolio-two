@@ -10,6 +10,15 @@
     grid-template-rows: repeat(2, 31.5rem);
     row-gap: 6rem;
     column-gap: 3rem;
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 35.9rem);
+      grid-template-rows: repeat(3, 31.5rem);
+      justify-content: center;
+    }
+    @include respond(tab-port) {
+      grid-template-columns: 80%;
+      grid-template-rows: repeat(6, 31.5rem);
+    }
   }
 
   &__card {
@@ -17,7 +26,16 @@
     height: 31.5rem;
     background-color: $color-grey-light-3;
     border: 1px solid $color-grey-light-2;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    @include respond(tab-port) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+    @include respond(phone) {
+      width: 100%;
+      display: block;
+    }
   }
 
   & h2 {
@@ -32,7 +50,12 @@
     border-radius: 50%;
     background-color: $color-black;
     color: $color-white;
-    margin: 3rem 0;
+    margin: 3rem;
+
+
+    @include respond(tab-port) {
+      flex-shrink: 0;
+    }
   }
   & h3 {
     margin-bottom: 3rem;
@@ -41,5 +64,8 @@
     color: $color-grey-dark-1;
     line-height: 2;
     padding: 0 3.4rem;
+    @include respond(tab-port) {
+      text-align: left;
+    }
   }
 }

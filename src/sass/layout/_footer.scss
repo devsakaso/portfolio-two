@@ -10,4 +10,7 @@
   & a {
     font-weight: 700;
   }
+  @include respond(phone) {
+    height: auto;
+  }
 }

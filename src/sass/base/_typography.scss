@@ -9,6 +9,11 @@ body {
   font-weight: 700;
   font-size: $font-size-h1;
   margin: 4rem 0;
+
+  @include respond(phone) {
+  font-size: $font-size-h2;
+  text-align: center;
+  }
 }
 
 .heading-secondary {
