@@ -6,9 +6,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  &__container {
+
+  &__slider {
     max-width: $container-width;
     margin: 0 auto;
+    // width: 80%; //slick-next, prevの位置調整
+  }
+  &__container {
     text-align: center;
   }
 
@@ -24,7 +28,7 @@
   }
   &__image {
     border-radius: 50%;
-    margin-bottom: 3.5rem;
+    margin: 0 auto 3.5rem;
   }
   &__name {
     color: $color-primary;
@@ -33,6 +37,8 @@
     margin-bottom: 1.5rem;
   }
   &__p {
+    max-width: 80%;
+    margin: 0 auto;
     color: $color-grey-light-2;
     line-height: 2;
     &:nth-of-type(2) {

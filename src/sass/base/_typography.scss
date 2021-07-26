@@ -29,15 +29,3 @@ body {
   font-weight: 700;
   font-size: $font-size-h3;
 }
-
-.paragraph {
-  &-bold {
-    font-weight: 700;
-  }
-  &-italic {
-    font-style: italic;
-  }
-  &-light {
-    font-weight: 100;
-  }
-}

@@ -28,9 +28,13 @@ const htmlmin = require('gulp-htmlmin');
 // ファイルのパス
 filesPath = {
   sass: './src/sass/**/*.scss',
-  jsVendors: './src/js/vendors/*.js',
-  js: './src/js/scripts.js',
-  images: './src/img/**/*.+(png|jpg|jpeg|gif|svg)',
+  js: [
+    './src/js/vendors/jquery/jquery.min.js',
+    './src/js/vendors/*.js',
+    './src/js/libs/*.js',
+    './src/js/scripts.js',
+  ],
+  images: './src/img/**/*.+(png|jpg|jpeg|gif|svg|ttf|woff|eot)',
   html: './html/**/*.kit',
 };
 
@@ -63,7 +67,7 @@ function jsTask() {
   return (
     gulp
       // .src(filesPath.js)
-      .src([filesPath.jsVendors, filesPath.js])
+      .src(filesPath.js)
       .pipe(plumber()) // errorによる監視のストップ防止
       .pipe(
         babel({
@@ -96,7 +100,8 @@ function kitTask() {
     .pipe(plumber()) // errorによる監視のストップ防止
     .pipe(kit()) //kitファイルをまとめる
     .pipe(
-      htmlmin({//htmlをミニファイ化
+      htmlmin({
+        //htmlをミニファイ化
         collapseWhitespace: true, //スペースを削除
       })
     )
