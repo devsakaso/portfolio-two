@@ -5,10 +5,12 @@
       rgba($color-tertiary, 0.7)
     ),
     url(../img/portfolio-bg.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
+    @include bgSetting;
+    clip-path: polygon(10% 0, 90% 0, 100% 5%, 100% 95%, 90% 100%, 10% 100%, 0 95%, 0 5%);  text-align: center;
+    @include respond(phone) {
+      clip-path: polygon(10% 0, 90% 0, 100% 3%, 100% 97%, 90% 100%, 10% 100%, 0 97%, 0 3%);
+
+    }
   &__container {
     max-width: $container-width;
     margin: 0 auto;

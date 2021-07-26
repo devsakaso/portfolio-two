@@ -16,16 +16,33 @@ $breakpoint arguement choices:
 */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
-      @media only screen and (max-width: 37.5em) { @content };    //600px
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
   }
   @if $breakpoint == tab-port {
-      @media only screen and (max-width: 56.25em) { @content };     //900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
   }
   @if $breakpoint == tab-land {
-      @media only screen and (max-width: 75em) { @content };    //1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
   }
   @if $breakpoint == big-desktop {
-      @media only screen and (min-width: 112.5em) { @content };    //1800
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
   }
 }
 
+@mixin bgSetting {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@mixin mainClipPath {
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+}

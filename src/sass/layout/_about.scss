@@ -52,9 +52,8 @@
         rgba($color-secondary, 0.9)
       ),
       url(../img/about-bg.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include bgSetting;
+    @include mainClipPath;
     padding: 12rem 0;
     &__container {
       max-width: $container-width;
@@ -73,7 +72,7 @@
       @include respond(tab-land) {
         width: 30%;
         &:last-child {
-        margin-right: 1rem;
+          margin-right: 1rem;
         }
       }
       @include respond(tab-port) {
@@ -87,7 +86,6 @@
           margin: 0 0 3rem;
         }
       }
-
     }
     & h2 {
       margin-bottom: 4.5rem;
