@@ -29,8 +29,8 @@ const htmlmin = require('gulp-htmlmin');
 filesPath = {
   sass: './src/sass/**/*.scss',
   js: [
-    './src/js/vendors/*.js',
-    './src/js/libs/*.js',
+    './src/js/vendors/**.js',
+    './src/js/libs/**.js',
     './src/js/scripts.js',
   ],
   images: './src/img/**/*.+(png|jpg|jpeg|gif|svg|ttf|woff|eot)',
@@ -65,7 +65,6 @@ function sassTask() {
 function jsTask() {
   return (
     gulp
-      // .src(filesPath.js)
       .src(filesPath.js)
       .pipe(plumber()) // errorによる監視のストップ防止
       .pipe(
