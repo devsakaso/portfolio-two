@@ -29,7 +29,6 @@ const htmlmin = require('gulp-htmlmin');
 filesPath = {
   sass: './src/sass/**/*.scss',
   js: [
-    './src/js/vendors/jquery/jquery.min.js',
     './src/js/vendors/*.js',
     './src/js/libs/*.js',
     './src/js/scripts.js',
