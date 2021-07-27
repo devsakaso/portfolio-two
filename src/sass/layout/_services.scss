@@ -36,6 +36,11 @@
       width: 100%;
       display: block;
     }
+    &:hover {
+      & i {
+        transform: rotateY(360deg) scale(1.2);
+      }
+    }
   }
 
   & h2 {
@@ -51,6 +56,7 @@
     background-color: $color-black;
     color: $color-white;
     margin: 3rem;
+    transition: transform 0.5s;
 
 
     @include respond(tab-port) {

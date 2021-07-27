@@ -18,11 +18,17 @@
     max-width: 36rem;
     max-height: 52.5rem;
     border: 1px solid $color-grey-light-2;
+    transition: transform 0.3s;
+    cursor: pointer;
     &:not(:last-child) {
       margin-right: 3rem;
       @include respond(tab-land) {
         margin-right: 0;
       }
+    }
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 10px 0 rgba($color-black,0.2);
     }
 
     @include respond(tab-land) {
@@ -59,6 +65,8 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    overflow: hidden;
+
     @include respond(tab-port) {
       max-height: 26.5rem;
       max-width: 40%;
@@ -68,6 +76,7 @@
 
     }
   }
+
 
   & h2 {
     margin-bottom: 5rem;
