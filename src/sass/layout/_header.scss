@@ -1,12 +1,14 @@
 .header {
   width: 100%;
   height: 10rem;
+  line-height: 6rem;
   padding: 3rem 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 5000;
+  transition: all 0.3s;
 
   &__container {
     max-width: $container-width;
@@ -17,12 +19,10 @@
     align-items: center;
     align-content: center;
     position: relative;
-    @include respond(tab-port) {
-      height: auto;
-    }
   }
   &__logo {
     font-weight: bold;
+    font-size: 2rem;
     color: $color-grey-light-1;
     margin: 0 3rem;
     @include respond(tab-port) {
@@ -30,7 +30,6 @@
     }
   }
   &__nav {
-    height: 7rem;
     transition: transform 0.3s, visibility 0.3s 0.1s;
     @include respond(tab-port) {
       &.hide {
@@ -43,7 +42,7 @@
       &.show {
         opacity: 1;
         visibility: visible;
-        transform: scale(1);  
+        transform: scale(1);
         height: 100vh;
         padding: 10rem 0;
         width: 100%;
@@ -54,15 +53,15 @@
     }
     &-list {
       display: flex;
+      align-content: center;
       margin: 0 3rem;
       @include respond(tab-port) {
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
       }
     }
     &-item {
-      padding-top: 3rem;
       transition: color 0.3s;
       &:hover {
         & a {
@@ -71,9 +70,23 @@
       }
     }
     &-link {
-      padding: 0.5rem 1.5rem;
+
+      height: 100%;
+      display: inline-block;
+      padding: 0 1.5rem;
       transition: color 0.3s;
       font-size: 1.8rem;
+    }
+  }
+// hero過ぎたらbgつける
+  &-bg {
+    background-color: rgba($color-black, 0.6);
+    height: 6rem;
+    line-height: 6rem;
+
+    & &__container {
+    height: 6rem;
+
     }
   }
 }

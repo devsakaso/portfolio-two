@@ -27,3 +27,11 @@
 .u-margin-top-huge {
   margin-top: 10rem !important;
 }
+
+.u-active-item {
+  border-bottom: 2px solid $color-primary;
+  // @include respond(tab-land) {
+  //   border-bottom: none;
+  //   background-color: rgba($color-primary, 0.5);
+  // }
+}
