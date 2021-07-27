@@ -16,10 +16,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
     />
+    <!-- loader -->
+    <link rel="stylesheet" href="./dist/css/loader.min.css" />
+    <script>
+      window.onload = () => {
+        const loader = document.getElementById('loader');
+        loader.classList.add('loaded');
+      };
+    </script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="./dist/css/main.min.css" />
     <title>Portfolio Two</title>
   </head>
   <body>
+    <div id="loader"><h2>LOADING</h2></div>
     <!-- @include _header.kit -->
     <!-- @include _hero.kit -->
     <!-- @include _aboutme.kit -->

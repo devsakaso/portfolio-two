@@ -36,14 +36,17 @@ class Main {
     return this._observers;
   }
 
-  // _init() {
-  //   Pace.on('done', this._paceDone.bind(this));
-  // }
-  // _paceDone() {
-  //   this._scrollInit();
-  // }
   _init() {
     this._scrollInit();
+  }
+
+  // appearのアニメーション
+  _inviewAnimation(el, inview) {
+    if (inview) {
+      el.classList.add('inview');
+    } else {
+      el.classList.remove('inview');
+    }
   }
 
   // progress-barを伸ばす
@@ -52,7 +55,7 @@ class Main {
     if (inview) {
       // activeクラスをつけたらアニメーション発火
       el.classList.add('active');
-      if(el.getAttribute('id') === 'progress-bar-2') {
+      if (el.getAttribute('id') === 'progress-bar-2') {
         // スタイルの見た目上barのwidth:80%はleft:70% 90%は80%としている
         el.childNodes[0].style.left = 70 + '%';
       } else {
@@ -111,6 +114,9 @@ class Main {
         { once: false, rootMargin: '-50% 0px' }
       );
     });
+    // appearのアニメーション
+    this.observers = new ScrollObserver('.appear', this._inviewAnimation),
+    { rootMargin: '-200px' };
     // progress-barを伸ばす
     this.progressBarId.forEach(bar => {
       this.observers = new ScrollObserver(
