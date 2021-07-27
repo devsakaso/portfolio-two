@@ -1,7 +1,14 @@
 .sns {
   margin-bottom: 4rem;
-
-  & i:not(:last-child) {
+  position: relative;
+  z-index: 10;
+  
+  & a:not(:last-child) {
     margin-right: 2.2rem;
+  }
+  & a {
+    &:hover {
+      color: $color-primary;
+    }
   }
 }

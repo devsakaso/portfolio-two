@@ -44,6 +44,9 @@
         max-width: 60rem;
       }
     }
+    & a {
+      color: $color-black;
+    }
   }
 
   &-skill {
