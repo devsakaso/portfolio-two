@@ -5,111 +5,119 @@
       rgba($color-tertiary, 0.7)
     ),
     url(../img/portfolio-bg.jpg);
-    @include bgSetting;
-    clip-path: polygon(10% 0, 90% 0, 100% 5%, 100% 95%, 90% 100%, 10% 100%, 0 95%, 0 5%);  text-align: center;
-    @include respond(phone) {
-      clip-path: polygon(10% 0, 90% 0, 100% 3%, 100% 97%, 90% 100%, 10% 100%, 0 97%, 0 3%);
-
-    }
+  @include bgSetting;
+  clip-path: polygon(
+    10% 0,
+    90% 0,
+    100% 5%,
+    100% 95%,
+    90% 100%,
+    10% 100%,
+    0 95%,
+    0 5%
+  );
+  text-align: center;
+  @include respond(phone) {
+    clip-path: polygon(
+      10% 0,
+      90% 0,
+      100% 3%,
+      100% 97%,
+      90% 100%,
+      10% 100%,
+      0 97%,
+      0 3%
+    );
+  }
   &__container {
     max-width: $container-width;
     margin: 0 auto;
     padding: 12rem 0;
   }
-  &__images {
-    margin: 2rem 0;
-    display: grid;
-    grid-template-columns: repeat(4, 26rem);
-    grid-template-rows: repeat(3, 20rem);
-    justify-content: center;
-    row-gap: 3rem;
-    column-gap: 3rem;
 
-    @include respond(tab-land) {
-      grid-template-columns: repeat(3, 30%);
-      grid-template-rows: repeat(4, 20rem);
+  &__images {
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__image {
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-out;
+  }
+  &__item {
+    padding: 1rem;
+    width: 25%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      width: 50%;
     }
     @include respond(tab-port) {
-      grid-template-columns: repeat(2, 26rem);
-      grid-template-rows: repeat(6, 20rem);
+      width: 50%;
     }
     @include respond(phone) {
-      display: block;
+      width: 100% !important;
     }
-  }
-
-  &__image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-right: 2px solid $color-white;
-    border-left: 2px solid $color-white;
-    &:nth-of-type(1) {
-      grid-row: 1 / span 1;
-      grid-column: 1 / span 1;
-    }
-    &:nth-of-type(2) {
-      grid-row: 1 / span 1;
-      grid-column: 2 / span 1;
-      @include respond(tab-land) {
-        grid-row: 2 / span 1;
-        grid-column: 1 / span 1;
-      }
-      @include respond(tab-port) {
-        grid-row: 1 / span 1;
-        grid-column: 2 / span 1;
-      }
-    }
-    &:nth-of-type(3) {
-      grid-row: 2 / -1;
-      grid-column: 1 / span 2;
-      @include respond(tab-land) {
-        grid-row: 3 / span 2;
-        grid-column: 1 / span 2;
-      }
-      @include respond(tab-port) {
-        grid-row: 2 / span 2;
-        grid-column: 1 / span 2;
-      }
-    }
-    &:nth-of-type(4) {
-      grid-row: 1 / span 2;
-      grid-column: 3 / -1;
-      @include respond(tab-land) {
-        grid-row: 1 / span 2;
-        grid-column: 2 / span 2;
-      }
-      @include respond(tab-port) {
-        grid-row: 5 / span 2;
-        grid-column: 1 / span 2;
-      }
-    }
-    &:nth-of-type(5) {
-      grid-row: 3 / span 1;
-      grid-column: 3 / span 1;
-
-      @include respond(tab-port) {
-        grid-row: 4 / span 1;
-        grid-column: 1 / span 1;
-      }
-    }
-    &:nth-of-type(6) {
-      grid-row: 3 / span 1;
-      grid-column: 4 / span 1;
-      @include respond(tab-land) {
-        grid-row: 4 / span 1;
-        grid-column: 3 / span 1;
-      }
-      @include respond(tab-port) {
-        grid-row: 4 / span 1;
-        grid-column: 2 / span 1;
-      }
-    }
-    @include respond(phone) {
-      margin: 2rem;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 5%;
       width: 90%;
+      height: 45%;
+      z-index: 90;
+      transition: transform 0.3s ease-in;
+      transform: scaleX(0);
+    }
+    &::before {
+      background-color: rgba($color-primary, 0.8);
+      top: 5%;
+      transform-origin: left;
+    }
+    &::after {
+      background-color: rgba($color-white, 0.8);
+      bottom: 5%;
+      transform-origin: right;
+    }
+    & p,
+    i {
+      font-size: 1.8rem;
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.3s ease-out 0.3s;
+      z-index: 100;
+      opacity: 0;
+    }
+    & p {
+      top: 25%;
+      color: $color-white;
+    }
+    & i {
+      bottom: 25%;
+      color: $color-primary;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        transform: scaleX(1);
+      }
+      & p,i {
+        opacity: 1;
+      }
+      & .portfolio__image {
+        transform: rotate(30deg) scale(1.2);
+      }
     }
   }
+
 
   & h2 {
     margin-bottom: 6rem;

@@ -1,19 +1,69 @@
 <section class="portfolio" id="portfolio">
   <div class="portfolio__container">
     <h2 class="heading-secondary">Portfolio</h2>
-    <div class="portfolio__buttons">
-      <button class="button small">All</button>
-      <button class="button small">Web Design</button>
-      <button class="button small">Graphics Design</button>
-      <button class="button small">Brand</button>
+    <div class="portfolio__buttons isotope-filter">
+      <button class="button small" data-filter="*">All</button>
+      <button class="button small" data-filter=".web-design">Web Design</button>
+      <button class="button small" data-filter=".graphics-design">
+        Graphics Design
+      </button>
+      <button class="button small" data-filter=".brand">Brand</button>
     </div>
     <div class="portfolio__images">
-      <img src="../dist/img/portfolio-1.jpg" alt="" class="portfolio__image">
-      <img src="../dist/img/portfolio-2.jpg" alt="" class="portfolio__image">
-      <img src="../dist/img/portfolio-3.jpg" alt="" class="portfolio__image">
-      <img src="../dist/img/portfolio-4.jpg" alt="" class="portfolio__image">
-      <img src="../dist/img/portfolio-5.jpg" alt="" class="portfolio__image">
-      <img src="../dist/img/portfolio-6.jpg" alt="" class="portfolio__image">
+      <div class="portfolio__item brand">
+        <img
+          src="../dist/img/portfolio-1.jpg"
+          alt=""
+          class="portfolio__image"
+        />
+        <p>brand</p>
+        <a href="#"><i class="fa fa-link"></i></a>
+      </div>
+      <div class="portfolio__item web-design">
+        <img
+          src="../dist/img/portfolio-2.jpg"
+          alt=""
+          class="portfolio__image"
+        />
+        <p>web-design</p>
+        <a href="#"><i class="fa fa-link"></i></a>
+      </div>
+      <div class="portfolio__item graphics-design">
+        <img
+          src="../dist/img/portfolio-3.jpg"
+          alt=""
+          class="portfolio__image"
+        />
+        <p>graphics-design</p>
+        <a href="#"><i class="fa fa-link"></i></a>
+      </div>
+      <div class="portfolio__item brand">
+        <img
+          src="../dist/img/portfolio-4.jpg"
+          alt=""
+          class="portfolio__image"
+        />
+        <p>brand</p>
+        <a href="#"><i class="fa fa-link"></i></a>
+      </div>
+      <div class="portfolio__item web-design">
+        <img
+          src="../dist/img/portfolio-5.jpg"
+          alt=""
+          class="portfolio__image"
+        />
+        <p>web-design</p>
+        <a href="#"><i class="fa fa-link"></i></a>
+      </div>
+      <div class="portfolio__item brand">
+        <img
+          src="../dist/img/portfolio-6.jpg"
+          alt=""
+          class="portfolio__image"
+        />
+        <p>brand</p>
+        <a href="#"><i class="fa fa-link"></i></a>
+      </div>
     </div>
   </div>
 </section>
