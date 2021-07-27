@@ -44,11 +44,11 @@ function sassTask() {
       // .src(['./src/sass/init/*.scss', './src/sass/abstracts/*.scss','./src/sass/base/*.scss','./src/sass/components/*.scss','./src/sass/layout/*.scss','./src/sass/pages/*.scss'])
       .src(filesPath.sass)
       .pipe(plumber()) // errorによる監視のストップ防止
-      .pipe(sourcemaps.init()) //sourcemaps starts
+      // .pipe(sourcemaps.init()) //sourcemaps starts
       .pipe(sass()) //compile
       .pipe(autoprefixer()) //prefix
       .pipe(cssnano()) //minify
-      .pipe(sourcemaps.write('.')) //sourcemaps ends
+      // .pipe(sourcemaps.write('.')) //sourcemaps ends
       .pipe(
         rename(path => {
           // mapファイルにはminをつけたくないので。
