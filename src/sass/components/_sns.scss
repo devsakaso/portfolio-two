@@ -2,13 +2,13 @@
   margin-bottom: 4rem;
   position: relative;
   z-index: 10;
-  
+
   & a:not(:last-child) {
     margin-right: 2.2rem;
   }
   & a {
-    &:hover {
-      color: $color-primary;
-    }
+      &:hover {
+        color: $color-primary;
+      }
   }
 }

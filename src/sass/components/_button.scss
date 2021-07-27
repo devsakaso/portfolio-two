@@ -10,26 +10,32 @@
   &.primary {
     background: $color-primary;
     border: 1px solid $color-primary;
-    &:hover {
-    background: $color-white;
-    border: 1px solid $color-white;
-    color: $color-primary;
+    @media (hover: hover) {
+      &:hover {
+        background: $color-white;
+        border: 1px solid $color-white;
+        color: $color-primary;
+      }
     }
   }
   &.transparent {
-    &:hover {
-      border: 1px solid $color-primary;
-      color: $color-primary;
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid $color-primary;
+        color: $color-primary;
+      }
     }
   }
   &.black {
     border: 1px solid $color-black;
     color: $color-black;
     margin-left: 0;
-    &:hover {
-      background: $color-black;
-      color: $color-white;
+    @media (hover: hover) {
+      &:hover {
+        background: $color-black;
+        color: $color-white;
       }
+    }
   }
   &.small {
     width: auto;
@@ -41,8 +47,10 @@
     margin: 0 1.5rem 4rem;
     background-color: $color-black;
     display: inline;
-    &:hover {
-      color: $color-primary;
+    @media (hover: hover) {
+      &:hover {
+        color: $color-primary;
+      }
     }
   }
 }
