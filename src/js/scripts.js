@@ -17,6 +17,13 @@ class Main {
     ];
     this.navItems = document.querySelectorAll('.header__nav-item');
     // this.itemsLazyloaded = document.querySelectorAll('.lazyload');
+    this.progressBarId = [
+      '#progress-bar-1',
+      '#progress-bar-2',
+      '#progress-bar-3',
+      '#progress-bar-4',
+    ];
+    // this.progressBars = document.querySelectorAll('.progress-bar');
     this._observers = [];
     this._init();
   }
@@ -39,20 +46,31 @@ class Main {
     this._scrollInit();
   }
 
+  // progress-barを伸ばす
+  _moveProgressBar(el, inview) {
+    if (!inview) return;
+    if (inview) {
+      // activeクラスをつけたらアニメーション発火
+      el.classList.add('active');
+      if(el.getAttribute('id') === 'progress-bar-2') {
+        // スタイルの見た目上barのwidth:80%はleft:70% 90%は80%としている
+        el.childNodes[0].style.left = 70 + '%';
+      } else {
+        el.childNodes[0].style.left = 80 + '%';
+      }
+    }
+  }
+
   //   ビュー内のsectionのメニューアイテムをハイライト
   _highlightMenuItem(el, inview) {
-    console.log('inviwe');
     //   elはインスタンス化したScrollObserverのsection、inviewはintersectingのboolean
     this.navItems.forEach(item => {
-      console.log('aaa');
       const itemHref = item.childNodes[0].getAttribute('href');
-      console.log(itemHref);
       const activeSection = el.getAttribute('id');
       if (!inview) return;
       if (inview) {
         if (activeSection === itemHref.slice(1)) {
           item.childNodes[0].classList.add('u-active-item');
-          console.log('u-active-item');
         } else {
           item.childNodes[0].classList.remove('u-active-item');
         }
@@ -91,6 +109,14 @@ class Main {
         section,
         this._highlightMenuItem.bind(this),
         { once: false, rootMargin: '-50% 0px' }
+      );
+    });
+    // progress-barを伸ばす
+    this.progressBarId.forEach(bar => {
+      this.observers = new ScrollObserver(
+        bar,
+        this._moveProgressBar.bind(this),
+        { once: true, rootMargin: '-20px' }
       );
     });
   }

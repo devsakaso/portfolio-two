@@ -5,7 +5,9 @@
     color: $color-black;
     display: flex;
     padding: 12rem 0;
-
+    @include respond(tab-land) {
+      margin: 0 2rem;
+    }
     @include respond(tab-port) {
       flex-direction: column;
     }
@@ -23,12 +25,14 @@
 
     &__container {
       padding-left: 3.4rem;
+
       @include respond(tab-port) {
         padding-left: 1rem;
         padding-right: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+
       }
     }
     & h3 {
@@ -64,10 +68,12 @@
       display: flex;
       @include respond(tab-land) {
         justify-content: space-evenly;
+        margin: 0 2rem;
       }
       @include respond(tab-port) {
         flex-direction: column;
         align-items: center;
+        margin: 0;
       }
     }
     &__wrapper {
