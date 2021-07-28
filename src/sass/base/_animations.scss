@@ -1,10 +1,12 @@
 $pattern: (
-  "up": translateY(16px),
-  "down": translateY(-16px),
-  "left": translateX(40px),
-  "right": translateX(-40px)
+  'up': translateY(16px),
+  'down': translateY(-16px),
+  'left': translateX(40px),
+  'right': translateX(-40px),
+  'scale-up': scale(0),
 );
 
+// クラスのアイテムの子要素をanimate
 @each $key, $value in $pattern {
   .appear.#{$key} {
     & .item {
@@ -25,9 +27,27 @@ $pattern: (
 
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
-          transition-delay: $i * 0.1s;
+          transition-delay: $i * 0.3s;
+          @include respond(tab-port) {
+            transition-delay: 0;
+          }
         }
       }
     }
+  }
+}
+
+// クラスのアイテムをanimate
+@each $key, $value in $pattern {
+  .appear-this-item.#{$key} {
+    transform: $value;
+  }
+}
+.appear-this-item {
+  transition: transform 0.5s 0.2s, opacity 1s; //TODO
+  opacity: 0;
+  &.inview {
+    opacity: 1;
+    transform: none;
   }
 }

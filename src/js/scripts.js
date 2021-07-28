@@ -40,7 +40,7 @@ class Main {
     this._scrollInit();
   }
 
-  // appearのアニメーション
+  // inviewのトグル appearのアニメーションなど
   _inviewAnimation(el, inview) {
     if (inview) {
       el.classList.add('inview');
@@ -55,11 +55,22 @@ class Main {
     if (inview) {
       // activeクラスをつけたらアニメーション発火
       el.classList.add('active');
-      if (el.getAttribute('id') === 'progress-bar-2') {
-        // スタイルの見た目上barのwidth:80%はleft:70% 90%は80%としている
-        el.childNodes[0].style.left = 70 + '%';
-      } else {
-        el.childNodes[0].style.left = 80 + '%';
+      // barとnumberの位置ずれがあるのでdevice widthで分岐
+      if (window.innerWidth > 900) {
+        if (el.getAttribute('id') === 'progress-bar-2') {
+          // スタイルの見た目上barのwidth:80%はleft:70% 90%は80%としている
+          el.childNodes[0].style.left = 70 + '%';
+        } else {
+          el.childNodes[0].style.left = 80 + '%';
+        }
+      }
+      if (window.innerWidth < 900) {
+        if (el.getAttribute('id') === 'progress-bar-2') {
+          // スタイルの見た目上barのwidth:80%はleft:70% 90%は80%としている
+          el.childNodes[0].style.left = 75 + '%';
+        } else {
+          el.childNodes[0].style.left = 85 + '%';
+        }
       }
     }
   }
@@ -114,15 +125,29 @@ class Main {
         { once: false, rootMargin: '-50% 0px' }
       );
     });
-    // appearのアニメーション
-    this.observers = new ScrollObserver('.appear', this._inviewAnimation),
-    { rootMargin: '-200px' };
+    // heroのparticlesとtypedのアニメーションをストップ
+    // this.observers = new ScrollObserver(
+    //   '#particles',
+    //   this._inviewAnimation.bind(this),
+    //   { once: false }
+    // );
+    // appearのアニメーション(appearの子要素)
+    this.observers = new ScrollObserver(
+      '.appear',
+      this._inviewAnimation.bind(this)
+    );
+    // appear-this-itemのアニメーション(appear-this-itemの要素)
+    this.observers = new ScrollObserver(
+      '.appear-this-item',
+      this._inviewAnimation.bind(this),
+      { rootMargin: '-50px' }
+    );
     // progress-barを伸ばす
     this.progressBarId.forEach(bar => {
       this.observers = new ScrollObserver(
         bar,
         this._moveProgressBar.bind(this),
-        { once: true, rootMargin: '-20px' }
+        { rootMargin: '-20px' }
       );
     });
   }

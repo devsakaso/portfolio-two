@@ -28,6 +28,9 @@
     @include respond(tab-port) {
       margin: 2rem 3rem;
     }
+    & a {
+      display: inline-block;
+    }
   }
   &__nav {
     transition: transform 0.3s, visibility 0.3s 0.1s;
@@ -70,7 +73,6 @@
       }
     }
     &-link {
-
       height: 100%;
       display: inline-block;
       padding: 0 1.5rem;
@@ -78,15 +80,14 @@
       font-size: 1.8rem;
     }
   }
-// hero過ぎたらbgつける
+  // hero過ぎたらbgつける
   &-bg {
     background-color: rgba($color-black, 0.6);
     height: 6rem;
     line-height: 6rem;
 
     & &__container {
-    height: 6rem;
-
+      height: 6rem;
     }
   }
 }
