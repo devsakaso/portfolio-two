@@ -31,15 +31,10 @@
   }
   &__container {
     max-width: $container-width;
-    min-height: 1200px;
+    height: auto;
+    position: relative;
     margin: 0 auto;
     padding: 12rem 0;
-    @include respond(tab-port) {
-    min-height: 1250px;
-    }
-    @include respond(phone) {
-    min-height: 2000px;
-    }
   }
 
   &__images {

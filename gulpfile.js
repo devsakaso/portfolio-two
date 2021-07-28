@@ -103,7 +103,7 @@ function kitTask() {
         collapseWhitespace: true, //スペースを削除
       })
     )
-    .pipe(dest('./'));
+    .pipe(dest('./dist'));
 }
 
 // Watch changes and browser-sync
@@ -111,7 +111,7 @@ function watch() {
   // browser-sync
   browserSync.init({
     server: {
-      baseDir: './', //index.htmlをrootにおいている場合。
+      baseDir: './dist', //index.htmlをrootにおいている場合。
     },
     browser: 'google chrome',
   });

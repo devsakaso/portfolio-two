@@ -125,12 +125,6 @@ class Main {
         { once: false, rootMargin: '-50% 0px' }
       );
     });
-    // heroのparticlesとtypedのアニメーションをストップ
-    // this.observers = new ScrollObserver(
-    //   '#particles',
-    //   this._inviewAnimation.bind(this),
-    //   { once: false }
-    // );
     // appearのアニメーション(appearの子要素)
     this.observers = new ScrollObserver(
       '.appear',
@@ -150,5 +144,6 @@ class Main {
         { rootMargin: '-20px' }
       );
     });
+
   }
 }
