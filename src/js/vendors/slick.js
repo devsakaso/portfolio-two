@@ -1434,19 +1434,19 @@
 
         _.initDotEvents();
         _.initSlideEvents();
-
+// TODO: ページのスクロール パフォーマンスを高めるには、touch および wheel イベント リスナーを `passive` として指定することをご検討ください , {passive: true}を加えた
         _.$list.on('touchstart.slick mousedown.slick', {
             action: 'start'
-        }, _.swipeHandler);
+        }, _.swipeHandler, {passive: true});
         _.$list.on('touchmove.slick mousemove.slick', {
             action: 'move'
-        }, _.swipeHandler);
+        }, _.swipeHandler, {passive: true});
         _.$list.on('touchend.slick mouseup.slick', {
             action: 'end'
-        }, _.swipeHandler);
+        }, _.swipeHandler, {passive: true});
         _.$list.on('touchcancel.slick mouseleave.slick', {
             action: 'end'
-        }, _.swipeHandler);
+        }, _.swipeHandler, {passive: true});
 
         _.$list.on('click.slick', _.clickHandler);
 
